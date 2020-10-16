@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{person.name}}</h1>
+        <h1>{{person.age}}</h1>
+        <input v-model="person.name" type="text"/>
+        <button @click="eventHandler">click</button>
+        <button v-on:click="eventHandler">click</button>
+        <h1 v-html="person.age"></button>
+    </div>
+    <script src="./compiler.js"></script>
+    <script src="./watcher.js"></script>
+    <script src="./dep.js"></script>
+    <script src="./observer.js"></script>
+    <script src="./proxy.js"></script>
+    <script src="./svue.js"></script>
+    <script>
+        var vm = new Svue({
+            el: '#app',
+            data: function() {
+                return {
+                    person: {
+                        name: 'kwis',
+                        age: 21
+                    }
+                }
+            },
+            methods: {
+                eventHandler() {
+                    alert('hello world');
+                },
+            },
+        });
+    </script>
+</body>
+</html>
